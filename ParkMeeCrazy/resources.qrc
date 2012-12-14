@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/parkmeecrazy/Board.qml</file>
+		<file>qml/parkmeecrazy/MMButton.qml</file>
+		<file>qml/parkmeecrazy/MMMAinView.qml</file>
+		<file>qml/parkmeecrazy/border.png</file>
+		<file>data/levels.db</file>
+    </qresource>
+</RCC>
