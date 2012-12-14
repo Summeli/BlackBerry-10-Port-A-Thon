@@ -1,0 +1,16 @@
+*.o
+*.a
+*.bar
+*.cproject
+*.project
+.preview*
+.moc
+.obj
+.settings
+.rcc
+arm/Makefile
+arm/Makefile.Debug
+arm/Makefile.Release
+x86/Makefile
+x86/Makefile.Debug
+x86/Makefile.Release
