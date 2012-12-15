@@ -371,7 +371,7 @@ void MainArea::abort()
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
         m_man = 0;
-        emit changeState(false);
+//      emit changeState(false);
 
         foreach (Ball* fball, m_fading) {
             fball->setOpacityF(1.0);
@@ -560,7 +560,9 @@ void MainArea::tick()
 
 void MainArea::setManPosition(const QPointF& p)
 {
-    Q_ASSERT(m_man);
+	if(!m_man)
+		return;
+    //Q_ASSERT(m_man);
 
     QPointF pos = p;
 
