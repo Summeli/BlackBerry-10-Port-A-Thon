@@ -1,0 +1,36 @@
+VERSION 0.2
+
+Logical game the main goal of which is to fill a board with selected color.
+Ported to BlackBerry10 by: Antti Pohjola
+
+Copyright (C) 2011 Kirill (spirit) Klochkov.
+Contact: klochkov.kirill@gmail.com
+
+GNU Lesser General Public License Usage
+Alternatively, this file may be used under the terms of the GNU Lesser
+General Public License version 2.1 as published by the Free Software
+Foundation and appearing in the file LICENSE.LGPL included in the
+packaging of this file.  Please review the following information to
+ensure the GNU Lesser General Public License version 2.1 requirements
+will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+
+NOTE 1: For successfuly building the game Qt 4.7.3 must be installed with Qt Declarative support.
+NOTE 2: QTDIR environment must be set.
+
+BUILD STEPS:
+    qmake
+    make
+    sudo make install
+
+BUILD STEPS WINDOWS:
+    qmake
+    mingw32-make
+    mingw32-make install
+
+RUN STEPS:
+    MAC: $QTDIR/bin/QMLViewer.app/Contents/MacOS/QMLViewer $QTDIR/imports/flood/main.qml
+    LINUX: $QTDIR/bin/qmlviewer $QTDIR/imports/flood/main.qml
+    WINDOWS: %QTDIR%\bin\qmlviewer %QTDIR%/imports/flood/main.qml
+
+What's new in newer version of the app you can refer to CHANGES.txt.
+Information about known issues you can find in KNOWN_ISSUES.txt.

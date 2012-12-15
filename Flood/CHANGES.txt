@@ -1,0 +1,4 @@
+flood 0.2
+    - fixed issue while resizing the game's window.
+    - font size fix for the statistics dialog.
+    - project's source hierarchy has been changed.

@@ -1,0 +1,2 @@
+flood 0.2
+    problems with the help dialog/statistics dialog on some devices in landscape mode.
