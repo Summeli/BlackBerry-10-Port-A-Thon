@@ -77,7 +77,7 @@ MainArea::MainArea()
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
 
     m_msg_font = QApplication::font();
-    m_msg_font.setPointSize(15);
+    m_msg_font.setPointSize(7);
 
     QImage tmp(rect.size(), QImage::Format_ARGB32_Premultiplied);
     {
@@ -94,11 +94,12 @@ MainArea::MainArea()
     		"About: \n"
     		"Qollision is based on KDE game Kollision \n"
     		"Qollision is licenced under GPLv2 license \n"
-    		"You can download the source code from https://github.com/Summeli/BlackBerry-10-Port-A-Thon \n"
-    		"BlackBerry 10 Port: Antti Pohjola antti.pohjola@gmail.com \n"
-    		"Kollision author: Paolo Capriotti p.capriotti@gmail.com \n"
-    		"Kollision author: Dmitry Suzdalev dimsuz@gmail.com \n"
-    		"Original idea: Matteo Guarnieri"), false);
+    		"You can download the source code from\n "
+    		"https://github.com/Summeli/BlackBerry-10-Port-A-Thon \n"
+    		"BlackBerry 10 Port:\n Antti Pohjola, antti.pohjola@gmail.com \n"
+    		"Kollision author:\n Paolo Capriotti, p.capriotti@gmail.com \n"
+    		"Kollision author:\n Dmitry Suzdalev, dimsuz@gmail.com \n"
+    		"Original idea:\n Matteo Guarnieri"), false);
 
 #ifndef Q_OS_QNX
     // setup audio player
@@ -179,7 +180,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
 
 void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
 {
-    const int step = 45;
+    const int step = 50;
     QPointF pos(m_sizeX / 2.0, (m_sizeY - step * messages.size()) / 2.0);
 
     for (int i = 0; i < messages.size(); i++) {
