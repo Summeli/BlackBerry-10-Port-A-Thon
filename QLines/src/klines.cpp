@@ -69,8 +69,8 @@ void KLinesMainWindow::setupActions()
 
     m_actShowNext = new QAction("Show Next Balls", this);
     m_actShowNext->setCheckable(true);
-    m_actShowNext->setChecked(false); // TODO read from app settings
-    mwidget->setShowNextColors(false); // TODO read from app settings
+    m_actShowNext->setChecked(true); // TODO read from app settings
+    mwidget->setShowNextColors(true); // TODO read from app settings
     connect(m_actShowNext, SIGNAL(triggered(bool)), SLOT(showNextToggled(bool)));
 
     QAction *actAbout = new QAction("About", this);
@@ -82,9 +82,9 @@ void KLinesMainWindow::setupActions()
     menuBar()->addAction(actNewGame);
     menuBar()->addAction(actUndo);
     menuBar()->addAction(actEndTurn);
-    menuBar()->addAction(m_actShowNext);
+    //menuBar()->addAction(m_actShowNext);
     menuBar()->addAction(actAbout);
-    menuBar()->addAction(actQuit);
+    //menuBar()->addAction(actQuit);
 
   /* TODO
   // Game
