@@ -77,7 +77,7 @@ MainArea::MainArea()
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
 
     m_msg_font = QApplication::font();
-    m_msg_font.setPointSize(7);
+    m_msg_font.setPointSize(5);
 
     QImage tmp(rect.size(), QImage::Format_ARGB32_Premultiplied);
     {
@@ -90,16 +90,16 @@ MainArea::MainArea()
     }
     m_background = QPixmap::fromImage(tmp);
 
-    writeText(i18n("Welcome to Qollision\n Tap Screen to start a game \n \n\n\n\n"
+    writeText(i18n("Welcome to Qollision\n Tap Screen to start a game \n"
     		"About: \n"
     		"Qollision is based on KDE game Kollision \n"
     		"Qollision is licenced under GPLv2 license \n"
     		"You can download the source code from\n "
     		"https://github.com/Summeli/BlackBerry-10-Port-A-Thon \n"
-    		"BlackBerry 10 Port:\n Antti Pohjola, antti.pohjola@gmail.com \n"
-    		"Kollision author:\n Paolo Capriotti, p.capriotti@gmail.com \n"
-    		"Kollision author:\n Dmitry Suzdalev, dimsuz@gmail.com \n"
-    		"Original idea:\n Matteo Guarnieri"), false);
+    		"BlackBerry 10 Port: Antti Pohjola, antti.pohjola@gmail.com \n"
+    		"Kollision author: Paolo Capriotti, p.capriotti@gmail.com \n"
+    		"Kollision author:Dmitry Suzdalev, dimsuz@gmail.com \n"
+    		"Original idea: Matteo Guarnieri"), false);
 
 #ifndef Q_OS_QNX
     // setup audio player
@@ -129,7 +129,11 @@ void MainArea::updateSounds()
 Animation* MainArea::writeMessage(const QString& text)
 {
     Message* message = new Message(text, m_msg_font);
+#ifdef Z10
     message->setPosition(QPointF(m_sizeX, m_sizeY) / 2.0);
+#else
+    message->setPosition(QPointF(0, 0) );
+#endif
     addItem(message);
     message->setOpacityF(0.0);
 
