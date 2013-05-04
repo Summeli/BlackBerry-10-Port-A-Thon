@@ -19,8 +19,10 @@ import flood 1.0
 Rectangle {
     id: window
 
-    width: 768
-    height: 1280
+    //width: 768
+    //height: 1280
+    width: 720
+    height: 720
     
     gradient: Gradient {
         GradientStop { position: 1.0; color: "white" }
@@ -150,13 +152,6 @@ Rectangle {
                 }
             }
         }
-
-        Rectangle {
-            id: emptySpace 
-            height: 250  
-            width: window.width
-            color: "transparent"
-        }
         
         Row {
             id: colorButtonsLayout
@@ -208,12 +203,6 @@ Rectangle {
             }
         }
 
-      Rectangle {
-            id: emptySpace2 
-            height: 50  
-            width: window.width
-            color: "transparent"
-        }
         
         Row {
             id: gameIndicatorLayout
