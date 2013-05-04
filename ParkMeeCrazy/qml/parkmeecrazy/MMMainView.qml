@@ -2,10 +2,16 @@ import QtQuick 1.0
 
 Rectangle {
     id: box
-    width: 768
-    height: 1280
+    width: 720
+    height: 720
     color: "black";
-
+	
+	Item {
+	 id: box_container
+	 width: 450
+	 height: 450
+	}
+	
     Rectangle {
         id: popupWon
         visible: false
@@ -211,8 +217,8 @@ Rectangle {
         visible: false
         anchors.centerIn: parent
         z: 999
-        width: 550
-        height: 850
+        width: 400
+        height: 680
         color: "black"
         radius: 50
         border.color: "gray"
@@ -231,7 +237,8 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter;
             anchors.top: parent.top
             anchors.topMargin: 20
-            font.pixelSize: 24
+            anchors.leftMargin: 5
+            font.pixelSize: 16
             text: "A 'Rush Hour'/'Traffic Jam' game clone\n\n" +
                   "Objective: move the red rectangle\n"+
                   "to the exit on the right by dragging\n" +
@@ -293,34 +300,27 @@ Rectangle {
                 }
             }
         }
-        Rectangle {
-            id: emptySpace 
-            height: 50  
-            width: box.width
-            color: "black"
-        }
+
         Board {
             id: board;
-            width: box.width;
-            height: box.width;
+            width: box_container.width;
+            height: box_container.width;
+            anchors.left: parent.left;
+            anchors.leftMargin: (box.width - box_container.width) / 2;
             gameStarted: 1
             onWon: box.youHaveWon();
         }
 
-        Rectangle {
-            id: someEmptySpace
-            height: 150
-            width: box.width;
-            color: "black"
-        }
+
         Rectangle {
             id: toolBox
-            width: parent.width
+            width: box.width
             height: box.height - titleLogo.height - board.height
             color: "black"
             Text {
                 id: levelTxt
                 anchors.top: parent.top
+                anchors.leftMargin: 20
                 text: " Level: " + board.levelIndex
                 color: "#ffaaaaaa"
                 font.pixelSize: 48
@@ -329,6 +329,7 @@ Rectangle {
                 id: movesTxt
                 anchors.top: parent.top
                 anchors.right: parent.right
+                anchors.rightMargin: 20
                 text: "Moves: " + board.boardMoves + " "
                 color: "#ffaaaaaa"
                 font.pixelSize: 48
@@ -337,6 +338,7 @@ Rectangle {
                 id: btnNext
                 anchors.top: levelTxt.bottom
                 anchors.topMargin: 10
+                anchors.leftMargin: 20
                 text: " Next Level"
                 color: "#ffaaaaaa"
                 font.pixelSize: 24
@@ -354,6 +356,7 @@ Rectangle {
                 anchors.top: movesTxt.bottom
                 anchors.right: parent.right
                 anchors.topMargin: 10
+                anchors.rightMargin: 20
                 text: "Restart Level "
                 color: "#ffaaaaaa"
                 font.pixelSize: 24
@@ -370,6 +373,7 @@ Rectangle {
                 id: btnJump
                 anchors.top: btnNext.bottom
                 anchors.topMargin: 20
+                anchors.leftMargin: 20
                 text: " Jump to Level"
                 color: "#ffaaaaaa"
                 font.pixelSize: 24
@@ -384,6 +388,7 @@ Rectangle {
                 id: btnQuit
                 anchors.top: btnRestart.bottom
                 anchors.right: parent.right
+                anchors.rightMargin: 20
                 anchors.topMargin: 20
                 text: " About "
                 color: "#ffaaaaaa"
