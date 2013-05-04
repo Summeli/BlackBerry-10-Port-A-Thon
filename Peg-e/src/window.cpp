@@ -198,7 +198,9 @@ void Window::newGame() {
 	// Create options
 	QComboBox* algorithms_box = new QComboBox(&dialog);
 	algorithms_box->addItem(tr("Original"), 1);
+#ifdef Z10 //branch doesn't fit in Q10
 	algorithms_box->addItem(tr("Branch"), 2);
+#endif
 	algorithms_box->addItem(tr("Line"), 3);
 	algorithms_box->setCurrentIndex(algorithms_box->findData(m_algorithm));
 

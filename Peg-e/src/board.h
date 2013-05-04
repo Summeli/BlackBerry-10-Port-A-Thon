@@ -28,6 +28,7 @@ class Hole;
 class Peg;
 
 class Board : public QGraphicsView {
+	Q_OBJECT
 public:
 	Board(QUndoStack* moves, QWidget* parent = 0);
 
